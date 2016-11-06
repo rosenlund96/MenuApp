@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/grp1" android:checkableBehavior="single" >
+    <item android:id="@+id/navigation_account"
+        android:title="Min Konto"
+        android:icon="@mipmap/ic_person_white_24dp"/>
+    </group>
+
+    <group android:id="@+id/grp2" android:checkableBehavior="single" >
+    <item android:id="@+id/navigation_store"
+        android:title="Butik"
+        android:icon="@mipmap/ic_local_grocery_store_white_24dp"/>
+    </group>
+
+    <group android:id="@+id/grp3" android:checkableBehavior="single" >
+    <item android:id="@+id/navigation_myTeam"
+        android:title="Mit Team"
+        android:icon="@mipmap/ic_supervisor_account_white_24dp"/>
+    </group>
+
+    <group android:id="@+id/grp4" android:checkableBehavior="single" >
+    <item android:id="@+id/navigation_results"
+        android:title="Resultater"
+        android:icon="@mipmap/ic_timeline_white_24dp"/>
+    </group>
+
+    <group android:id="@+id/grp5" android:checkableBehavior="single" >
+    <item android:id="@+id/navigation_settings"
+        android:title="Indstillinger"
+        android:icon="@mipmap/ic_settings_white_24dp"/>
+    </group>
+
+    <group android:id="@+id/grp6" android:checkableBehavior="single" >
+    <item android:id="@+id/navigation_logout"
+        android:title="Log Ud"
+        android:icon="@mipmap/ic_power_settings_new_white_24dp" />
+    </group>
+
+
+</menu>
