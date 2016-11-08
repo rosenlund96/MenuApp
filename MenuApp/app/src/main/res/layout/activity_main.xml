@@ -21,14 +21,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Main Layout"
-            android:id="@+id/Text1"
-            android:layout_gravity="center_vertical"
-            android:textAlignment="center"
-            android:textSize="24dp"/>
+        <fragment android:name="com.galgespil.stvhendeop.menuapp.PrefFragment"
+            android:id="@+id/article_fragment"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            tools:layout="@layout/frag_pref" />
     </LinearLayout>
 
     <android.support.design.widget.NavigationView
