@@ -20,7 +20,7 @@
             android:layout_height="fill_parent"
             android:id="@+id/imageView"
             android:src="@mipmap/logo"
-            android:layout_weight="1.5"
+            android:layout_weight="1.6"
             android:scaleType="fitCenter" />
 
         <LinearLayout
@@ -33,7 +33,7 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="fill_parent"
-                android:layout_weight="1">
+                android:layout_weight="1.05">
 
                 <EditText
                     android:layout_width="fill_parent"
@@ -42,7 +42,11 @@
                     android:ems="10"
                     android:id="@+id/editText2"
                     android:layout_weight="1"
-                    android:hint="Fornavn" />
+                    android:hint="Fornavn"
+                    android:background="@drawable/textedit_custom"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp" />
 
                 <EditText
                     android:layout_width="fill_parent"
@@ -51,7 +55,11 @@
                     android:ems="10"
                     android:id="@+id/editText"
                     android:layout_weight="1"
-                    android:hint="Efternavn" />
+                    android:hint="Efternavn"
+                    android:background="@drawable/textedit_custom"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp" />
             </LinearLayout>
 
             <EditText
@@ -61,7 +69,10 @@
                 android:ems="10"
                 android:id="@+id/editText3"
                 android:hint="Email adresse"
-                android:layout_weight="1" />
+                android:layout_weight="1.05"
+                android:background="@drawable/textedit_custom"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp" />
 
             <EditText
                 android:layout_width="fill_parent"
@@ -70,13 +81,16 @@
                 android:ems="10"
                 android:id="@+id/editText4"
                 android:hint="Kodeord"
-                android:layout_weight="1" />
+                android:layout_weight="1.05"
+                android:background="@drawable/textedit_custom"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp" />
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="fill_parent"
-                android:layout_weight="1">
+                android:layout_weight="1.05">
 
                 <EditText
                     android:layout_width="fill_parent"
@@ -85,7 +99,11 @@
                     android:id="@+id/editText5"
                     android:layout_weight="1"
                     android:hint="Fødselsår"
-                    android:inputType="date" />
+                    android:inputType="date"
+                    android:background="@drawable/textedit_custom"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp" />
 
                 <EditText
                     android:layout_width="fill_parent"
@@ -94,7 +112,11 @@
                     android:ems="10"
                     android:id="@+id/editText6"
                     android:layout_weight="1"
-                    android:hint="Telefon" />
+                    android:hint="Telefon"
+                    android:background="@drawable/textedit_custom"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -103,14 +125,23 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1">
 
-                <CheckBox
+                <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="fill_parent"
-                    android:id="@+id/checkBox"
-                    android:layout_weight="5"
-                    android:gravity="start"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="10dp" />
+                    android:layout_height="match_parent"
+                    android:layout_weight="4">
+
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/checkBox"
+                        android:layout_weight="1"
+                        android:button="@drawable/custom_checkbox"
+                        android:scaleX="0.4"
+                        android:scaleY="0.4"
+                        android:checked="false"
+                        android:layout_marginLeft="4dp" />
+                </LinearLayout>
 
                 <TextView
                     android:layout_width="fill_parent"
@@ -118,7 +149,8 @@
                     android:text="Jeg accepterer SoftSkills betingelser"
                     android:id="@+id/textView2"
                     android:gravity="center_vertical|center_horizontal"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:layout_marginRight="20dp" />
             </LinearLayout>
 
             <Button
@@ -126,9 +158,11 @@
                 android:layout_height="fill_parent"
                 android:text="Registrer"
                 android:id="@+id/button"
-                android:background="@color/colorPrimaryDark"
+                android:background="@drawable/button_primary"
                 android:textColor="@color/white"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
