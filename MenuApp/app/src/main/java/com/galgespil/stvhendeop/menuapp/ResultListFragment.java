@@ -6,20 +6,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
 /**
- * Created by mathiaslarsen on 08/11/2016.
+ * Created by mathiaslarsen on 14/11/2016.
  */
 
+public class ResultListFragment extends Fragment{
 
-
-public class RemindFragment extends Fragment{
-
-View myView;
+    View myView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        myView = inflater.inflate(R.layout.frag_remind, container, false);
+        myView = inflater.inflate(R.layout.frag_resultlist, container, false);
         return myView;
     }
 
-    }
+}

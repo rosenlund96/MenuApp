@@ -21,10 +21,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-        <fragment android:name="com.galgespil.stvhendeop.menuapp.PrefFragment"
+        <android.support.v7.widget.ContentFrameLayout android:name="com.galgespil.stvhendeop.menuapp.PrefFragment"
             android:id="@+id/article_fragment"
             android:layout_weight="2"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:layout="@layout/frag_pref" />
     </LinearLayout>
@@ -35,6 +35,7 @@
         app:menu="@menu/navigation_menu"
         android:layout_gravity="start"
         app:headerLayout="@layout/navigation_header"
+        android:id="@+id/navigation"
         android:background="@color/colorAccent"
         android:theme="@style/Base.ThemeOverlay.AppCompat.Dark">
 

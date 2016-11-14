@@ -1,44 +1,52 @@
 package com.galgespil.stvhendeop.menuapp;
 
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
+import android.content.Intent;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+import static com.galgespil.stvhendeop.menuapp.R.layout.frag_register;
 
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private DrawerLayout mDrawerLayout;
-    private ActionBarDrawerToggle mToggle;
-    private Toolbar mToolbar;
+    public Button login;
+    public Button register;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.frag_login);
 
-        mToolbar = (Toolbar) findViewById(R.id.nav_action);
-        setSupportActionBar(mToolbar);
 
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
-        mToggle = new ActionBarDrawerToggle(this,mDrawerLayout,R.string.open,R.string.close);
+        login = (Button) findViewById(R.id.button3);
+        register = (Button) findViewById(R.id.button2);
 
-        mDrawerLayout.addDrawerListener(mToggle);
-        mToggle.syncState();
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        login.setOnClickListener(this);
+        register.setOnClickListener(this);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
 
-        if (mToggle.onOptionsItemSelected(item)){
-            return true;
+
+
+
+
+
+
+    @Override
+    public void onClick(View v) {
+
+        if (v == login){
+            Intent i = new Intent(MainActivity.this, MainMenu.class);
+            startActivity(i);
         }
-        return super.onOptionsItemSelected(item);
+        else if (v == register){
+            Intent i = new Intent(MainActivity.this,RegisterActivity.class);
+            startActivity(i);
+        }
     }
 }

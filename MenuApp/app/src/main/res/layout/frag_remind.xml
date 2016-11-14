@@ -7,18 +7,12 @@
     android:background="#ffffff">
 
 
-    <include layout="@layout/navigation_action"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/include" />
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="55dp">
+        android:layout_alignParentStart="true">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -148,5 +142,6 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
 
 </RelativeLayout>
