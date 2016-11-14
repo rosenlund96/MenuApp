@@ -67,6 +67,12 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
                         .commit();
                 mToolbar.setTitle("Udfyld profil");
                 break;
+            case R.id.navigation_results:
+                fragManager.beginTransaction()
+                        .replace(R.id.article_fragment
+                                , new ResultListFragment())
+                        .commit();
+                mToolbar.setTitle("Resultater");
 
 
         }
