@@ -1,6 +1,7 @@
 package com.galgespil.stvhendeop.menuapp;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -52,6 +53,13 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         fragmentManager = getSupportFragmentManager();
+        if (savedInstanceState == null) {
+            fragmentManager.beginTransaction()
+                    .replace(R.id.article_fragment
+                            , new RemindFragment())
+                    .commit();
+            mToolbar.setTitle("Opfølgning");
+        }
 
 
     }
@@ -91,7 +99,9 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
                         .commit();
                 mToolbar.setTitle("Inviter");
 
-            case R.id.navigation_store:
+            case R.id.navigation_settings:
+                Intent i = new Intent(this, PrefFragment.class);
+                startActivity(i);
                 break;
 
 

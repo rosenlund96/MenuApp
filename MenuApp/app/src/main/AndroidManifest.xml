@@ -10,6 +10,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainMenu" />
+        <activity android:name=".PrefFragment" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,7 +18,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PreferenceFragment"></activity>
     </application>
 
 </manifest>
