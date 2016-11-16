@@ -15,6 +15,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import static android.R.attr.password;
 
@@ -33,6 +34,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private static final String TAG = "EmailPassword";
+    private FirebaseUser mUser;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,9 +50,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         telefon = (EditText) findViewById(R.id.editText6);
 
         mAuth = FirebaseAuth.getInstance();
-
+        mUser = mAuth.getCurrentUser();
         knap = (Button) findViewById(R.id.button);
         knap.setOnClickListener(this);
+
     }
 
     private void createAccount(String email, String password) {
@@ -65,6 +68,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
                         knap.setText("Konto oprettet!");
+
                         // If sign in fails, display a message to the user. If sign in succeeds
                         // the auth state listener will be notified and logic to handle the
                         // signed in user can be handled in the listener.

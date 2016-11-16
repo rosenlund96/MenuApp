@@ -128,6 +128,13 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
                 Intent i = new Intent(this, PrefFragment.class);
                 startActivity(i);
                 break;
+            case R.id.navigation_store:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.article_fragment
+                                , new StoreFragment())
+                        .commit();
+                mToolbar.setTitle("Butik");
+
             case R.id.navigation_logout:
                 signOut();
                 break;
