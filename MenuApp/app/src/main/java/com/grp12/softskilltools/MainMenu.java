@@ -1,8 +1,9 @@
-package com.galgespil.stvhendeop.menuapp;
+package com.grp12.softskilltools;
 
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
@@ -10,10 +11,13 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
+
+import com.galgespil.stvhendeop.menuapp.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 /**
  * Created by mathiaslarsen on 13/11/2016.
@@ -27,6 +31,10 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
     private NavigationView navView;
     private FragmentManager fragmentManager;
     private ImageView user;
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
+    private static final String TAG = "EmailPassword";
+
 
 
 
@@ -61,8 +69,25 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
             mToolbar.setTitle("Opfølgning");
         }
 
+    mAuth = FirebaseAuth.getInstance();
 
-    }
+
+
+    mAuthListener = new FirebaseAuth.AuthStateListener() {
+        @Override
+        public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+            FirebaseUser user = firebaseAuth.getCurrentUser();
+            if (user != null) {
+                // User is signed in
+                Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
+            } else {
+                // User is signed out
+                Log.d(TAG, "onAuthStateChanged:signed_out");
+            }
+        }
+    };
+
+}
 
     public boolean onNavigationItemSelected(MenuItem item) {
 
@@ -103,6 +128,9 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
                 Intent i = new Intent(this, PrefFragment.class);
                 startActivity(i);
                 break;
+            case R.id.navigation_logout:
+                signOut();
+                break;
 
 
 
@@ -121,6 +149,20 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
             }
             return super.onOptionsItemSelected(item);
         }
+
+
+
+    private void signOut() {
+        mAuth.signOut();
+
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
+    }
 }
 
 

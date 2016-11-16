@@ -1,4 +1,4 @@
-package com.galgespil.stvhendeop.menuapp;
+package com.grp12.softskilltools;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.galgespil.stvhendeop.menuapp.R;
 
 /**
  * Created by mathiaslarsen on 13/11/2016.
@@ -17,7 +19,7 @@ public class RemindAdaptor extends ArrayAdapter<String> {
     int[] progress;
 
     RemindAdaptor(Context context, String[] names, int[] progress){
-        super(context,R.layout.remind_adaptor,names);
+        super(context, R.layout.remind_adaptor,names);
         this.progress = progress;
 
     }

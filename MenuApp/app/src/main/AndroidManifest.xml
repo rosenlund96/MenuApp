@@ -8,10 +8,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".MainMenu" />
-        <activity android:name=".PrefFragment" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.grp12.softskilltools.RegisterActivity" />
+        <activity android:name="com.grp12.softskilltools.MainMenu" />
+        <activity android:name="com.grp12.softskilltools.PrefFragment" />
+        <activity android:name="com.grp12.softskilltools.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

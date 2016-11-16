@@ -1,14 +1,12 @@
-package com.galgespil.stvhendeop.menuapp;
+package com.grp12.softskilltools;
 
 import android.content.Intent;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import static com.galgespil.stvhendeop.menuapp.R.layout.frag_register;
+import com.galgespil.stvhendeop.menuapp.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 

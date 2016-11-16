@@ -1,4 +1,4 @@
-package com.galgespil.stvhendeop.menuapp;
+package com.grp12.softskilltools;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -6,17 +6,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.galgespil.stvhendeop.menuapp.R;
+
+
 /**
- * Created by mathiaslarsen on 14/11/2016.
+ * Created by mathiaslarsen on 08/11/2016.
  */
 
-public class ResultListFragment extends Fragment{
 
-    View myView;
+
+public class RemindFragment extends Fragment{
+
+View myView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        myView = inflater.inflate(R.layout.frag_resultlist, container, false);
+        myView = inflater.inflate(R.layout.frag_remind, container, false);
         return myView;
     }
 
-}
+    }

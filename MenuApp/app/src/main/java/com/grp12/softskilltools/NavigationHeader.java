@@ -1,13 +1,12 @@
-package com.galgespil.stvhendeop.menuapp;
+package com.grp12.softskilltools;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.galgespil.stvhendeop.menuapp.R;
 
 /**
  * Created by mathiaslarsen on 15/11/2016.
