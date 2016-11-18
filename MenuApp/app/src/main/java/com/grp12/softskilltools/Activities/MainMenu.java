@@ -1,4 +1,4 @@
-package com.grp12.softskilltools;
+package com.grp12.softskilltools.Activities;
 
 
 import android.content.Intent;
@@ -18,6 +18,12 @@ import android.widget.ImageView;
 import com.galgespil.stvhendeop.menuapp.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.grp12.softskilltools.Fragment.ActiveTestsFragment;
+import com.grp12.softskilltools.Fragment.InviteFragment;
+import com.grp12.softskilltools.Fragment.RemindFragment;
+import com.grp12.softskilltools.Fragment.ResultListFragment;
+import com.grp12.softskilltools.Fragment.StoreFragment;
+import com.grp12.softskilltools.Fragment.PrefFragment;
 
 /**
  * Created by mathiaslarsen on 13/11/2016.
@@ -64,7 +70,7 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
         if (savedInstanceState == null) {
             fragmentManager.beginTransaction()
                     .replace(R.id.article_fragment
-                            , new RemindFragment())
+                            , new ActiveTestsFragment())
                     .commit();
             mToolbar.setTitle("Opfølgning");
         }
