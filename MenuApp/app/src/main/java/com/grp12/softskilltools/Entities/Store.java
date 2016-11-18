@@ -5,4 +5,7 @@ package com.grp12.softskilltools.Entities;
  */
 
 public class Store {
+
+
+
 }

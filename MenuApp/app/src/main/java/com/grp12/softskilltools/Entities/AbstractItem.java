@@ -12,16 +12,25 @@ public abstract class AbstractItem {
     public String id;
     public boolean isUsed;
     protected testType type;
+    protected User owner;
 
     public AbstractItem(double cost, testType type, String id, boolean isUsed){
         this.cost = cost;
         this.id = id;
         this.isUsed = isUsed;
         this.type = type;
+        this.owner = null;
     }
     public testType getTestType(){
         return type;
     }
+    public User getOwner(){
+        return owner;
+    }
+    public void setOwner(User owner) {
+        this.owner = owner;
+    }
+
     @Override
     public String toString(){
         switch(type){

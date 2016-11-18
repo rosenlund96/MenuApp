@@ -1,4 +1,4 @@
-package com.grp12.softskilltools;
+package com.grp12.softskilltools.Activities;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -16,8 +16,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
-import static android.R.attr.password;
 
 /**
  * Created by mathiaslarsen on 13/11/2016.

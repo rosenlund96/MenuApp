@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.galgespil.stvhendeop.menuapp.R;
-import com.grp12.softskilltools.RegisterActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
