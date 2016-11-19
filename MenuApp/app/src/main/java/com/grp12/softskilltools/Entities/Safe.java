@@ -1,20 +1,45 @@
 package com.grp12.softskilltools.Entities;
 
+import java.util.List;
+
 /**
  * Created by mathiaslarsen on 18/11/2016.
  */
 
 public class Safe {
 
-    public AbstractItem[] abstractItems;
-    private int NUMBER_OF_ITEMS = 5;
+    public List<AbstractItem> abstractItems;
+    private AbstractItem item;
+    private User owner;
 
-    public Safe(User user){
-        Initialize(user);
+    public Safe(User owner){
+        Initialize(owner);
     }
 
 
     public void Initialize(User user){
-        abstractItems = new AbstractItem[NUMBER_OF_ITEMS];
+        this.owner = user;
+    }
+
+    public boolean addToSafe(AbstractItem item, int qty){
+         int value = abstractItems.size();
+
+        for (int i = 0; i < qty; i++) {
+            abstractItems.add(item);
+        }
+
+        if (abstractItems.size()==value){
+            return false;
+        }
+        return true;
+    }
+
+    public boolean removeItemFromSafe(AbstractItem item){
+        int value = abstractItems.size();
+               abstractItems.remove(item);
+        if (abstractItems.size()==value){
+            return false;
+        }
+        return true;
     }
 }

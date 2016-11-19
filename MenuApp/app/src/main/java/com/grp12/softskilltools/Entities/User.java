@@ -43,5 +43,8 @@ public class User {
     public String getPhone(){
         return this.phone;
     }
+    public void addToSafe(AbstractItem item, int qty){
+        safe.addToSafe(item,qty);
+    }
 
 }
