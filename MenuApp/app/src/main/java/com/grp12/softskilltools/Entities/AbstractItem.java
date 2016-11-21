@@ -13,6 +13,7 @@ public abstract class AbstractItem {
     public boolean isUsed;
     protected testType type;
     protected User owner;
+    private String productName;
 
     public AbstractItem(double cost, testType type, String id, boolean isUsed){
         this.cost = cost;
@@ -20,16 +21,20 @@ public abstract class AbstractItem {
         this.isUsed = isUsed;
         this.type = type;
         this.owner = null;
+        this.productName = null;
     }
     public testType getTestType(){
         return type;
     }
+    public void setTestType(testType type) {this.type = type;}
     public User getOwner(){
         return owner;
     }
     public void setOwner(User owner) {
         this.owner = owner;
     }
+    public void setName(String name) { this.productName = name;}
+    public void setCost(int cost) { this.cost = cost;}
 
     @Override
     public String toString(){

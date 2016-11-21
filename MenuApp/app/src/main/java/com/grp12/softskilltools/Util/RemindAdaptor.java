@@ -1,4 +1,4 @@
-package com.grp12.softskilltools;
+package com.grp12.softskilltools.Util;
 
 import android.content.Context;
 import android.view.LayoutInflater;

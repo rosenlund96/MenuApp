@@ -1,5 +1,7 @@
 package com.grp12.softskilltools.resources;
 
+import com.grp12.softskilltools.Entities.Question;
+
 /**
  * Created by mathiaslarsen on 21/11/2016.
  */
@@ -94,5 +96,83 @@ public class DISC_Data {
             "Holder følelser for dig selv",
 
 };
+    public static final Question.questionType[] DISCTYPE_Data = {
+                        Question.questionType.Dom,
+                        Question.questionType.Sta,
+                        Question.questionType.Dom,
+                        Question.questionType.Sta,
+                        Question.questionType.Dom,
+                        Question.questionType.Sta,
+                        Question.questionType.Dom,
+                        Question.questionType.Sta,
+                        Question.questionType.Dom,
+                        Question.questionType.Sta,
+                        Question.questionType.Dom,
+                        Question.questionType.Sta,
+                        Question.questionType.Dom,
+                        Question.questionType.Sta,
+                        Question.questionType.Dom,
+                        Question.questionType.Sta,
+                        Question.questionType.Dom,
+                        Question.questionType.Sta,
+                        Question.questionType.Dom,
+                        Question.questionType.Sta,
+                        Question.questionType.Dom,
+                        Question.questionType.Sta,
+                        Question.questionType.Dom,
+                        Question.questionType.Sta,
+                        Question.questionType.Dom,
+                        Question.questionType.Sta,
+                        Question.questionType.Dom,
+                        Question.questionType.Sta,
+                        Question.questionType.Dom,
+                        Question.questionType.Sta,
+                        Question.questionType.Dom,
+                        Question.questionType.Sta,
+                        Question.questionType.Dom,
+                        Question.questionType.Sta,
+                        Question.questionType.Dom,
+                        Question.questionType.Sta,
+                        Question.questionType.Inf,
+                        Question.questionType.Com,
+                                Question.questionType.Inf,
+                                Question.questionType.Com,
+                                Question.questionType.Inf,
+                                Question.questionType.Com,
+                                Question.questionType.Inf,
+                                Question.questionType.Com,
+                                Question.questionType.Inf,
+                                Question.questionType.Com,
+                                Question.questionType.Inf,
+                                Question.questionType.Com,
+                                Question.questionType.Inf,
+                                Question.questionType.Com,
+                                Question.questionType.Inf,
+                                Question.questionType.Com,
+                                Question.questionType.Inf,
+                                Question.questionType.Com,
+                                Question.questionType.Inf,
+                                Question.questionType.Com,
+                                Question.questionType.Inf,
+                                Question.questionType.Com,
+                                Question.questionType.Inf,
+                                Question.questionType.Com,
+                                Question.questionType.Inf,
+                                Question.questionType.Com,
+                                Question.questionType.Inf,
+                                Question.questionType.Com,
+                                Question.questionType.Inf,
+                                Question.questionType.Com,
+                                Question.questionType.Inf,
+                                Question.questionType.Com,
+                                Question.questionType.Inf,
+                                Question.questionType.Com,
+                                Question.questionType.Inf,
+                                Question.questionType.Com
+
+
+
+
+    };
 
 }
