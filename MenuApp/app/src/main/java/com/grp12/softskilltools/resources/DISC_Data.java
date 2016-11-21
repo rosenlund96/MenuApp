@@ -29,7 +29,7 @@ public class DISC_Data {
             "Fokuseret på egne idéer",
             "Opmærksom på andres idéer og tanker",
             "Træffer egne beslutninger",
-            "Lytter på andre",
+            "Lytter til andre",
             "Sætter mål og arbejder efter dem",
             "Arbejder efter fælles mål",
             "Sagsorienteret",
