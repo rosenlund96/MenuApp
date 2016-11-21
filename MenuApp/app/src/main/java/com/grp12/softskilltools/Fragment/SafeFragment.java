@@ -12,7 +12,7 @@ import com.galgespil.stvhendeop.menuapp.R;
  * Created by mathiaslarsen on 14/11/2016.
  */
 
-public class ActiveTestsFragment extends Fragment {
+public class SafeFragment extends Fragment {
 
     View myView;
     @Override

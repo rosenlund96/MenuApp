@@ -1,18 +1,18 @@
 package com.grp12.softskilltools.Fragment;
 
-import android.content.Context;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
 import com.galgespil.stvhendeop.menuapp.R;
 import com.grp12.softskilltools.Entities.AbstractItem;
+import com.grp12.softskilltools.Entities.BELBIN;
+import com.grp12.softskilltools.Entities.DISC;
 import com.grp12.softskilltools.Entities.Purchase;
+import com.grp12.softskilltools.Entities.THREESIXTY;
 import com.grp12.softskilltools.Entities.User;
 import com.grp12.softskilltools.resources.ItemDefinition;
 
@@ -21,7 +21,7 @@ import com.grp12.softskilltools.resources.ItemDefinition;
  * Created by mathiaslarsen on 16/11/2016.
  */
 
-public class StoreFragment extends ListFragment {
+public class StoreFragment extends Fragment {
     private User user;
     private Purchase purchase;
     private AbstractItem[] items;
@@ -50,9 +50,19 @@ public class StoreFragment extends ListFragment {
         items = new AbstractItem[Store_items];
 
         for (int i = 0; i < Store_items; i++) {
-            items[i].setName(ItemDefinition.TESTName_DATA[i]);
-            items[i].setCost(ItemDefinition.TESTPrice_DATA[i]);
-            items[i].setTestType(ItemDefinition.testType[i]);
+            switch (ItemDefinition.testType[i]) {
+
+                case DISC:
+                    items[i] = new DISC(ItemDefinition.TESTPrice_DATA[i],false,ItemDefinition.TESTName_DATA[i]);
+                    break;
+                case BELBIN:
+                    items[i] = new BELBIN(ItemDefinition.TESTPrice_DATA[i],false, ItemDefinition.TESTName_DATA[i]);
+                    break;
+
+                case THREESIXTY:
+                    items[i] = new THREESIXTY(ItemDefinition.TESTPrice_DATA[i],false, ItemDefinition.TESTName_DATA[i]);
+                    break;
+            }
         }
     }
 }

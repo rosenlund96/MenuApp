@@ -1,5 +1,7 @@
 package com.grp12.softskilltools.resources;
 
+import com.grp12.softskilltools.Entities.Question;
+
 /**
  * Created by mathiaslarsen on 21/11/2016.
  */
@@ -98,5 +100,8 @@ public class BELBIN_Data {
             "Tøver jeg med at udtrykke mine personlige synspunkter over for vanskelige eller ‘stærke’ folk"
 
 };
+    public static final Question.questionType[] BELBINTYPE_Data = {
+
+    };
 
 }

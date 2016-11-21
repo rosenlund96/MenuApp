@@ -11,23 +11,23 @@ public class DISC extends AbstractItem {
     private int Inf;
     private int Sta;
     private int Com;
+    private String name;
     private boolean isUsed;
     private int Complete;
     private final int totalQuestions = 72;
     public static Question[] questions;
 
 
-    public DISC(int Dom,int Inf,int Sta,int Com, double cost, testType type,String id, boolean isUsed){
-        super(cost, type, id, isUsed);
-        this.Dom = Dom;
-        this.Inf = Inf;
-        this.Sta = Sta;
-        this.Com = Com;
-        this.isUsed = false;
-        this.Complete = 0;
-
+    public DISC(double cost, boolean isUsed, String name ) {
+        super(cost, isUsed);
+        Dom = 0;
+        Inf = 0;
+        Sta = 0;
+        Com = 0;
+        this.name = name;
 
         initialize();
+
     }
 
     public int getDom() {
@@ -74,9 +74,7 @@ public class DISC extends AbstractItem {
     public void initialize(){
         questions = new Question[totalQuestions];
         for (int i = 0; i < totalQuestions; i++){
-            questions[i].setQuestionNo(DISC_Data.QuestionNo_DATA[i]);
-            questions[i].setQuestion(DISC_Data.DISCWord_Data[i]);
-            questions[i].setType(DISC_Data.DISCTYPE_Data[i]);
+            questions[i] = new Question(DISC_Data.DISCWord_Data[i],DISC_Data.QuestionNo_DATA[i],DISC_Data.DISCTYPE_Data[i]);
         }
     }
 
@@ -90,4 +88,18 @@ public class DISC extends AbstractItem {
     }
 
     /**DISC TEST LOGIC END**/
+
+    @Override
+    public String toString() {
+        return "DISC{" +
+                "Dom=" + Dom +
+                ", Inf=" + Inf +
+                ", Sta=" + Sta +
+                ", Com=" + Com +
+                ", name='" + name + '\'' +
+                ", isUsed=" + isUsed +
+                ", Complete=" + Complete +
+                ", totalQuestions=" + totalQuestions +
+                '}';
+    }
 }

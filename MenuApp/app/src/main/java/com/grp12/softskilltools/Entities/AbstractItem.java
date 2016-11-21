@@ -9,17 +9,14 @@ package com.grp12.softskilltools.Entities;
 public abstract class AbstractItem {
     public double cost;
     public enum testType{DISC,BELBIN,THREESIXTY};
-    public String id;
     public boolean isUsed;
     protected testType type;
     protected User owner;
     private String productName;
 
-    public AbstractItem(double cost, testType type, String id, boolean isUsed){
+    public AbstractItem(double cost, boolean isUsed){
         this.cost = cost;
-        this.id = id;
         this.isUsed = isUsed;
-        this.type = type;
         this.owner = null;
         this.productName = null;
     }

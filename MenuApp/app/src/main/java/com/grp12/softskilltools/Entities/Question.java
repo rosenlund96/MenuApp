@@ -7,17 +7,15 @@ package com.grp12.softskilltools.Entities;
 public class Question {
 
     private String question;
-    private int remainingQuestions;
     private int questionNo;
-    private int totalQuestions;
     public boolean answered;
     public enum questionType {Dom,Inf,Sta,Com};
     public questionType type;
 
-    public Question(String question,int totalQuestions,int questionNo){
+    public Question(String question,int questionNo, questionType type){
         this.questionNo = questionNo;
         this.question = question;
-        this.totalQuestions = totalQuestions;
+        this.type = type;
     }
 
     public int getQuestionNo(){
