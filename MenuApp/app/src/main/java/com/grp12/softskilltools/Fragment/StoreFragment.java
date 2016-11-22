@@ -2,10 +2,12 @@ package com.grp12.softskilltools.Fragment;
 
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.galgespil.stvhendeop.menuapp.R;
 import com.grp12.softskilltools.Entities.AbstractItem;
@@ -14,7 +16,12 @@ import com.grp12.softskilltools.Entities.DISC;
 import com.grp12.softskilltools.Entities.Purchase;
 import com.grp12.softskilltools.Entities.THREESIXTY;
 import com.grp12.softskilltools.Entities.User;
+import com.grp12.softskilltools.Util.StoreAdaptor;
 import com.grp12.softskilltools.resources.ItemDefinition;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 
 /**
@@ -22,6 +29,11 @@ import com.grp12.softskilltools.resources.ItemDefinition;
  */
 
 public class StoreFragment extends Fragment {
+
+    public StoreFragment(){
+        initialize();
+    }
+
     private User user;
     private Purchase purchase;
     private AbstractItem[] items;
@@ -31,17 +43,13 @@ public class StoreFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         myView = inflater.inflate(R.layout.frag_store, container, false);
+
+        ArrayList<AbstractItem> products = getProducts();
+        ListView lv = (ListView) myView.findViewById(R.id.list);
+        lv.setAdapter(new StoreAdaptor(getActivity(), products));
         return myView;
     }
 
-    public StoreFragment(){
-
-
-        initialize();
-
-
-
-    }
     public void addToBasket(AbstractItem item, Purchase purchase, int qty){
         purchase.addItem(item,qty);
     }
@@ -53,17 +61,22 @@ public class StoreFragment extends Fragment {
             switch (ItemDefinition.testType[i]) {
 
                 case DISC:
-                    items[i] = new DISC(ItemDefinition.TESTPrice_DATA[i],false,ItemDefinition.TESTName_DATA[i]);
+                    items[i] = new DISC(ItemDefinition.TESTPrice_DATA[i],false,ItemDefinition.TESTName_DATA[i],ItemDefinition.TESTDescription_DATA[i]);
                     break;
 
                 case BELBIN:
-                    items[i] = new BELBIN(ItemDefinition.TESTPrice_DATA[i],false, ItemDefinition.TESTName_DATA[i]);
+                    items[i] = new BELBIN(ItemDefinition.TESTPrice_DATA[i],false, ItemDefinition.TESTName_DATA[i],ItemDefinition.TESTDescription_DATA[i]);
                     break;
 
                 case THREESIXTY:
-                    items[i] = new THREESIXTY(ItemDefinition.TESTPrice_DATA[i],false, ItemDefinition.TESTName_DATA[i]);
+                    items[i] = new THREESIXTY(ItemDefinition.TESTPrice_DATA[i],false, ItemDefinition.TESTName_DATA[i],ItemDefinition.TESTDescription_DATA[i]);
                     break;
             }
         }
+    }
+    public ArrayList<AbstractItem> getProducts(){
+
+        ArrayList<AbstractItem> products = new ArrayList<>(Arrays.asList(items));
+        return products;
     }
 }

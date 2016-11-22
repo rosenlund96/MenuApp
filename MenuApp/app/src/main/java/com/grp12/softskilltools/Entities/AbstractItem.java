@@ -12,13 +12,15 @@ public abstract class AbstractItem {
     public boolean isUsed;
     protected testType type;
     protected User owner;
-    private String productName;
+    private String productName, description;
 
-    public AbstractItem(double cost, boolean isUsed){
+    public AbstractItem(double cost, boolean isUsed, String productName, String description){
         this.cost = cost;
         this.isUsed = isUsed;
         this.owner = null;
-        this.productName = null;
+        this.productName = productName;
+        this.description = description;
+
     }
     public testType getTestType(){
         return type;
@@ -32,6 +34,8 @@ public abstract class AbstractItem {
     }
     public void setName(String name) { this.productName = name;}
     public void setCost(int cost) { this.cost = cost;}
+    public String getProductName(){ return productName;}
+    public String getDescription(){ return description;}
 
     @Override
     public String toString(){

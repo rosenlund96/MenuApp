@@ -16,6 +16,12 @@ public class ItemDefinition {
             "Belbin",
             "ThreeSixty"
 };
+    public static final String [] TESTDescription_DATA = {
+            "DISC test beskrivelse",
+            "BELBIN test beskrivelse",
+            "360-graders test beskrivelse"
+
+    };
 public static final int [] TESTPrice_DATA = {
         30,50,80
         };

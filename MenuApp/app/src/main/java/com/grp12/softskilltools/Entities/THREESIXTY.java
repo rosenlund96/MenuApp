@@ -8,8 +8,8 @@ public class THREESIXTY extends AbstractItem {
 
     private String name;
 
-    public THREESIXTY(double cost, boolean isUsed, String name) {
-        super(cost, isUsed);
+    public THREESIXTY(double cost, boolean isUsed, String productName, String description) {
+        super(cost, isUsed, productName, description);
         this.name = name;
     }
 }

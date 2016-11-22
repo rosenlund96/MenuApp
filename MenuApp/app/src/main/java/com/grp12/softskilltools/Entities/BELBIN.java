@@ -12,8 +12,8 @@ public class BELBIN extends AbstractItem {
     private final int totalQuestions = 70;
     public static Question[] questions;
 
-    public BELBIN(double cost, boolean isUsed, String name) {
-        super(cost, isUsed);
+    public BELBIN(double cost, boolean isUsed, String productName, String description) {
+        super(cost, isUsed, productName, description);
         this.name = name;
         initialize();
     }

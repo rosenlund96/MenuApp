@@ -11,20 +11,18 @@ public class DISC extends AbstractItem {
     private int Inf;
     private int Sta;
     private int Com;
-    private String name;
     private boolean isUsed;
     private int Complete;
     private final int totalQuestions = 72;
     public static Question[] questions;
 
 
-    public DISC(double cost, boolean isUsed, String name ) {
-        super(cost, isUsed);
+    public DISC(double cost, boolean isUsed, String productName, String description ) {
+        super(cost, isUsed, productName, description);
         Dom = 0;
         Inf = 0;
         Sta = 0;
         Com = 0;
-        this.name = name;
 
         initialize();
 
@@ -96,7 +94,6 @@ public class DISC extends AbstractItem {
                 ", Inf=" + Inf +
                 ", Sta=" + Sta +
                 ", Com=" + Com +
-                ", name='" + name + '\'' +
                 ", isUsed=" + isUsed +
                 ", Complete=" + Complete +
                 ", totalQuestions=" + totalQuestions +
