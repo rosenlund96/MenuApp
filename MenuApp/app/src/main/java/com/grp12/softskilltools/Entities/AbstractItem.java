@@ -36,6 +36,7 @@ public abstract class AbstractItem {
     public void setCost(int cost) { this.cost = cost;}
     public String getProductName(){ return productName;}
     public String getDescription(){ return description;}
+    public String getPrice() {return Double.toString(cost);}
 
     @Override
     public String toString(){

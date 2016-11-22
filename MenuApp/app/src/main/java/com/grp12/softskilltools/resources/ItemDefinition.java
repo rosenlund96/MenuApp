@@ -17,13 +17,13 @@ public class ItemDefinition {
             "ThreeSixty"
 };
     public static final String [] TESTDescription_DATA = {
-            "DISC test beskrivelse",
-            "BELBIN test beskrivelse",
-            "360-graders test beskrivelse"
+            "DISC test beskrivelse. Kan en beskrivelse være kort? NEEIGH!",
+            "BELBIN test beskrivelse. Lad os bare give hver beskrivelse 60 tegn. ",
+            "360-graders test beskrivelse, som er meget lang og irriterende"
 
     };
-public static final int [] TESTPrice_DATA = {
-        30,50,80
+public static final double [] TESTPrice_DATA = {
+        29.95,49.95,79.95
         };
 
 

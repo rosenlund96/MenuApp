@@ -47,13 +47,13 @@ public class StoreAdaptor extends BaseAdapter {
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
-        // TODO Auto-generated method stub
         ViewHolder holder;
         if(convertView == null){
-            convertView = mInflater.inflate(R.layout.store_adaptor, null);
+            convertView = mInflater.inflate(R.layout.store_adaptor, parent, false);
             holder = new ViewHolder();
             holder.name = (TextView) convertView.findViewById(R.id.textView15);
             holder.description = (TextView) convertView.findViewById(R.id.textView16);
+            holder.price = (TextView) convertView.findViewById(R.id.textView17);
 
             convertView.setTag(holder);
         } else {
@@ -61,13 +61,14 @@ public class StoreAdaptor extends BaseAdapter {
         }
 
         holder.name.setText(products.get(position).getProductName());
-        holder.name.setText(products.get(position).getDescription());
+        holder.description.setText(products.get(position).getDescription());
+        holder.price.setText(products.get(position).getPrice()+",-");
 
         return convertView;
     }
 
     static class ViewHolder{
-        TextView name, description;
+        TextView name, description, price;
     }
 }
 

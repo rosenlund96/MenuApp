@@ -4,6 +4,7 @@ package com.grp12.softskilltools.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +32,7 @@ import java.util.Arrays;
 public class StoreFragment extends Fragment {
 
     public StoreFragment(){
-        initialize();
+
     }
 
     private User user;
@@ -43,12 +44,13 @@ public class StoreFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         myView = inflater.inflate(R.layout.frag_store, container, false);
-
+        initialize();
         ArrayList<AbstractItem> products = getProducts();
         ListView lv = (ListView) myView.findViewById(R.id.list);
-        lv.setAdapter(new StoreAdaptor(getActivity(), products));
+        lv.setAdapter(new StoreAdaptor(getContext(), products));
         return myView;
     }
+
 
     public void addToBasket(AbstractItem item, Purchase purchase, int qty){
         purchase.addItem(item,qty);
