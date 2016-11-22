@@ -55,6 +55,7 @@ public class StoreFragment extends Fragment {
                 case DISC:
                     items[i] = new DISC(ItemDefinition.TESTPrice_DATA[i],false,ItemDefinition.TESTName_DATA[i]);
                     break;
+
                 case BELBIN:
                     items[i] = new BELBIN(ItemDefinition.TESTPrice_DATA[i],false, ItemDefinition.TESTName_DATA[i]);
                     break;
