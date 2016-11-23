@@ -39,7 +39,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
 
         if (v == login){
-            Intent i = new Intent(MainActivity.this, MainMenu.class);
+            Intent i = new Intent(MainActivity.this, LoginPromptActivity.class);
+
             startActivity(i);
         }
         else if (v == register){

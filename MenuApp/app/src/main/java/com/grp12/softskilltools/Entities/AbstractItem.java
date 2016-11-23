@@ -37,6 +37,7 @@ public abstract class AbstractItem {
     public String getProductName(){ return productName;}
     public String getDescription(){ return description;}
     public String getPrice() {return Double.toString(cost);}
+    public int getCompletion(){ return 1;}
 
     @Override
     public String toString(){

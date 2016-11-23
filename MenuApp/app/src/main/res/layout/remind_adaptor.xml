@@ -5,9 +5,30 @@
 
     <LinearLayout
         android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3">
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/checkBox2"
+            android:layout_weight="1"
+            android:button="@drawable/custom_checkbox"
+            android:scaleX="0.4"
+            android:scaleY="0.4"
+            android:layout_marginTop="-12dp"
+            android:layout_marginRight="-15dp"
+            android:checked="false" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_weight="3"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="-5dp">
 
         <ImageView
             android:id="@+id/icon"
@@ -15,7 +36,6 @@
             android:layout_height="fill_parent"
             android:layout_alignParentBottom="true"
             android:layout_alignParentTop="true"
-            android:layout_marginRight="6dip"
             android:contentDescription="TODO"
             android:src="@mipmap/bruger"
             android:layout_weight="1" />
@@ -25,7 +45,8 @@
         android:orientation="horizontal"
         android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp">
 
         <LinearLayout
             android:orientation="vertical"
