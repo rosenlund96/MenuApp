@@ -3,6 +3,7 @@ package com.grp12.softskilltools.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.preference.PreferenceFragment;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -13,11 +14,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.galgespil.stvhendeop.menuapp.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.grp12.softskilltools.Entities.DISC;
+import com.grp12.softskilltools.Fragment.DISCFragment;
 import com.grp12.softskilltools.Fragment.SafeFragment;
 import com.grp12.softskilltools.Fragment.InviteFragment;
 import com.grp12.softskilltools.Fragment.RemindFragment;
@@ -49,6 +54,13 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.navigation);
+        View hView =  navigationView.getHeaderView(0);
+        TextView nav_user = (TextView)hView.findViewById(R.id.NavHeaderName);
+        TextView nav_email = (TextView)hView.findViewById(R.id.NavHeaderEmail);
+        nav_user.setText("Testbruger");
+        nav_email.setText("Jegergay@gaymail.com");
 
 
         mToolbar = (Toolbar) findViewById(R.id.nav_action);
@@ -122,6 +134,7 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
                                 , new ResultListFragment())
                         .commit();
                 mToolbar.setTitle("Resultater");
+                break;
 
             case R.id.navigation_invite:
                 fragmentManager.beginTransaction()
@@ -129,6 +142,7 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
                                 , new InviteFragment())
                         .commit();
                 mToolbar.setTitle("Inviter");
+                break;
 
             case R.id.navigation_settings:
                 Intent i = new Intent(this, PrefFragment.class);
@@ -153,6 +167,23 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    public static class MyPreferenceFragment extends PreferenceFragment
+    {
+
+        private Toolbar mToolbar;
+        @Override
+        public void onCreate(final Bundle savedInstanceState)
+        {
+            super.onCreate(savedInstanceState);
+
+
+            addPreferencesFromResource(R.xml.preferences);
+
+        }
+    }
+
+
 
         @Override
         public boolean onOptionsItemSelected (MenuItem item){

@@ -19,10 +19,10 @@ public class NavigationHeader extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.navigation_header);
+        setContentView(R.layout.navigation_header1);
         user = (ImageView)findViewById(R.id.imageView2);
-        userName = (TextView)findViewById(R.id.textView);
-        userEmail = (TextView)findViewById(R.id.textView13);
+        userName = (TextView)findViewById(R.id.NavHeaderName);
+        userEmail = (TextView)findViewById(R.id.NavHeaderEmail);
     }
 
 

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.galgespil.stvhendeop.menuapp.com.stvhendeop.menuapp.MainActivity"
+    tools:context="com.grp12.softskilltools.Activities.MainMenu"
     android:id="@+id/drawerLayout">
 
 
@@ -34,7 +34,7 @@
         android:layout_height="match_parent"
         app:menu="@menu/navigation_menu"
         android:layout_gravity="start"
-        app:headerLayout="@layout/navigation_header"
+        app:headerLayout="@layout/navigation_header1"
         android:id="@+id/navigation"
         android:background="@color/colorAccent"
         android:theme="@style/Base.ThemeOverlay.AppCompat.Dark">

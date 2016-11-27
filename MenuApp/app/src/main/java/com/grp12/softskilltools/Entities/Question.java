@@ -9,7 +9,7 @@ public class Question {
     private String question;
     private int questionNo;
     public boolean answered;
-    public enum questionType {Dom,Inf,Sta,Com, PL,RI,CO,SH,ME,TW,IMP,CF,SP,DROP};
+    public enum questionType {Dom,Inf,Sta,Com,PL,RI,CO,SH,ME,TW,IMP,CF,SP,DROP};
     public questionType type;
 
     public Question(String question,int questionNo, questionType type){

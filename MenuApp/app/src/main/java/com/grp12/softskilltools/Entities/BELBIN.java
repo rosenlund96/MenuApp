@@ -8,13 +8,11 @@ import com.grp12.softskilltools.resources.BELBIN_Data;
  */
 
 public class BELBIN extends AbstractItem {
-    private String name;
     private final int totalQuestions = 70;
     public static Question[] questions;
 
     public BELBIN(double cost, boolean isUsed, String productName, String description) {
         super(cost, isUsed, productName, description);
-        this.name = name;
         initialize();
     }
 

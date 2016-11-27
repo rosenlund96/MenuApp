@@ -23,6 +23,7 @@ public class DISC extends AbstractItem {
         Inf = 0;
         Sta = 0;
         Com = 0;
+        this.Complete = getCompletion();
 
         initialize();
 
@@ -69,6 +70,9 @@ public class DISC extends AbstractItem {
     }
 
 
+
+
+    /**DISC TEST LOGIC BEGIN**/
     public void initialize(){
         questions = new Question[totalQuestions];
         for (int i = 0; i < totalQuestions; i++){
@@ -76,13 +80,54 @@ public class DISC extends AbstractItem {
         }
     }
 
-    /**DISC TEST LOGIC BEGIN**/
-    public void setScore(){
+    public Question QUEUELOGIC(){
+        /**Get next question from questions**/
 
+        Question nextQuestion;
+
+            nextQuestion = questions[0];
+            //ACTION
+            for (int i = 0; i < (questions.length - 1); i++) {
+                questions[i] = questions[i + 1];
+            }
+            questions[questions.length - 1] = nextQuestion;
+            return nextQuestion;
+        }
+
+    public void setScore(Question question,int score){
+    switch(question.getType()){
+
+        case Com:
+            setCom(score);
+            break;
+        case Sta:
+            setSta(score);
+            break;
+        case Inf:
+            setInf(score);
+            break;
+        case Dom:
+            setDom(score);
+            break;
+    }
+    }
+
+    public void setQuestionAnswered(Question question){
+        int questionNo = getQuestionNumber(question);
+        questions[questionNo-1].setAnswered(true);
     }
     public int getCompletion(int totalQuestions, int currentQuestionNo ){
         int result = currentQuestionNo/totalQuestions*100;
         return result;
+    }
+    public int getQuestionNumber(Question question){
+        int number  = 0;
+        for(int i = 0; i < totalQuestions; i++){
+            if(question == questions[i])
+                number = i;
+        }
+        return number;
+
     }
 
     /**DISC TEST LOGIC END**/
