@@ -2,6 +2,7 @@ package com.grp12.softskilltools.Fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,7 @@ public class DISCFragment extends Fragment implements View.OnClickListener {
     Button B10,B11,B12,B13,B14,B15,B20,B21,B22,B23,B24,B25,Next;
     DISC test;
     Question currentQuestion1, currentQuestion2;
+    boolean finished = false;
     private int q1,q2;
 
 
@@ -45,11 +47,13 @@ public class DISCFragment extends Fragment implements View.OnClickListener {
         B24 = (Button) myView.findViewById(R.id.button16);
         B25 = (Button) myView.findViewById(R.id.button15);
         Next = (Button) myView.findViewById(R.id.button4);
+        Next.setOnClickListener(this);
         test.initialize();
         q1 = 0;
         q2 = 0;
         currentQuestion1 = test.QUEUELOGIC();
         currentQuestion2 = test.QUEUELOGIC();
+
 
 
         return myView;
@@ -71,7 +75,12 @@ public class DISCFragment extends Fragment implements View.OnClickListener {
     }
     public void loadQuestion(Question current, TextView placeHolder){
         current = test.QUEUELOGIC();
+        if (current==null){
+            Next.setText("Se resultat");
+            finished = true;
+        }
         placeHolder.setText(current.getQuestion());
+
     }
 
 
@@ -127,7 +136,10 @@ public class DISCFragment extends Fragment implements View.OnClickListener {
                 q1 = 0;
                 break;
             case R.id.button4:
-                next();
+                if (finished==false){
+                    next();
+                }
+                //Gå til resultat
                 break;
         }
     }

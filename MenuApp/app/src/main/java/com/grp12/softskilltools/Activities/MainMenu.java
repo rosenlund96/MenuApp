@@ -23,6 +23,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.grp12.softskilltools.Entities.DISC;
 import com.grp12.softskilltools.Fragment.DISCFragment;
+import com.grp12.softskilltools.Fragment.DISCResultFragment;
 import com.grp12.softskilltools.Fragment.SafeFragment;
 import com.grp12.softskilltools.Fragment.InviteFragment;
 import com.grp12.softskilltools.Fragment.RemindFragment;
@@ -84,7 +85,7 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
                     .replace(R.id.article_fragment
                             , new SafeFragment())
                     .commit();
-            mToolbar.setTitle("Opfølgning");
+            mToolbar.setTitle("Aktive tests");
         }
 
     mAuth = FirebaseAuth.getInstance();
@@ -157,6 +158,7 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
 
             case R.id.navigation_logout:
                 signOut();
+
                 break;
 
 

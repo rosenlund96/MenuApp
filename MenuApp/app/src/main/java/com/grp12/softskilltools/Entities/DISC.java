@@ -7,10 +7,7 @@ import com.grp12.softskilltools.resources.DISC_Data;
  */
 
 public class DISC extends AbstractItem {
-    private int Dom;
-    private int Inf;
-    private int Sta;
-    private int Com;
+    private int Dom,Inf,Sta,Com;
     private boolean isUsed;
     private int Complete;
     private final int totalQuestions = 72;
@@ -86,12 +83,17 @@ public class DISC extends AbstractItem {
         Question nextQuestion;
 
             nextQuestion = questions[0];
-            //ACTION
-            for (int i = 0; i < (questions.length - 1); i++) {
-                questions[i] = questions[i + 1];
+            if (nextQuestion.getAnswered() == false) {
+                //ACTION
+                for (int i = 0; i < (questions.length - 1); i++) {
+                    questions[i] = questions[i + 1];
+                }
+                questions[questions.length - 1] = nextQuestion;
+                return nextQuestion;
             }
-            questions[questions.length - 1] = nextQuestion;
-            return nextQuestion;
+            isUsed = true;
+            //Lav et resultat
+            return null;
         }
 
     public void setScore(Question question,int score){
