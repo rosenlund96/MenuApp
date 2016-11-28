@@ -2,25 +2,22 @@ package com.grp12.softskilltools.Fragment;
 
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.galgespil.stvhendeop.menuapp.R;
+import com.grp12.softskilltools.Activities.MainMenu;
 import com.grp12.softskilltools.Entities.AbstractItem;
 import com.grp12.softskilltools.Entities.BELBIN;
 import com.grp12.softskilltools.Entities.DISC;
-import com.grp12.softskilltools.Entities.Purchase;
 import com.grp12.softskilltools.Entities.THREESIXTY;
 import com.grp12.softskilltools.Entities.User;
 import com.grp12.softskilltools.Util.StoreAdaptor;
 import com.grp12.softskilltools.resources.ItemDefinition;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -36,11 +33,11 @@ public class StoreFragment extends Fragment {
     }
 
     private User user;
-    private Purchase purchase;
     private AbstractItem[] items;
     private int qty;
     private final int Store_items = 3;
     View myView;
+    private static StoreFragment sStoreFragment;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         myView = inflater.inflate(R.layout.frag_store, container, false);
@@ -48,12 +45,16 @@ public class StoreFragment extends Fragment {
         ArrayList<AbstractItem> products = getProducts();
         ListView lv = (ListView) myView.findViewById(R.id.list);
         lv.setAdapter(new StoreAdaptor(getContext(), products));
+        sStoreFragment = this;
         return myView;
     }
 
 
-    public void addToBasket(AbstractItem item, Purchase purchase, int qty){
-        purchase.addItem(item,qty);
+    public void addToBasket(AbstractItem item, int qty, User user){
+        user.addToSafe(item, qty);
+    }
+    public User getUser(){
+        return MainMenu.getInstance().getUser();
     }
 
     public void initialize() {
@@ -75,6 +76,10 @@ public class StoreFragment extends Fragment {
                     break;
             }
         }
+    }
+
+    public static StoreFragment getInstance() {
+        return sStoreFragment;
     }
     public ArrayList<AbstractItem> getProducts(){
 

@@ -22,6 +22,7 @@ import com.galgespil.stvhendeop.menuapp.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.grp12.softskilltools.Entities.DISC;
+import com.grp12.softskilltools.Entities.User;
 import com.grp12.softskilltools.Fragment.DISCFragment;
 import com.grp12.softskilltools.Fragment.DISCResultFragment;
 import com.grp12.softskilltools.Fragment.SafeFragment;
@@ -42,10 +43,12 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
     private Toolbar mToolbar;
     private NavigationView navView;
     private FragmentManager fragmentManager;
-    private ImageView user;
+    private ImageView Iuser;
     private FirebaseAuth mAuth;
+    private User user;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private static final String TAG = "EmailPassword";
+    private static MainMenu sMainMenu;
 
 
 
@@ -55,6 +58,8 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        sMainMenu = this;
+        this.user = null;
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigation);
         View hView =  navigationView.getHeaderView(0);
@@ -107,6 +112,12 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
     };
 
 }
+    public static MainMenu getInstance() {
+        return sMainMenu;
+    }
+    public User getUser(){
+        return user;
+    }
 
     public boolean onNavigationItemSelected(MenuItem item) {
 

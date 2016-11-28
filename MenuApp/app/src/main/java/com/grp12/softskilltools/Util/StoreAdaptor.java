@@ -5,10 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.galgespil.stvhendeop.menuapp.R;
 import com.grp12.softskilltools.Entities.AbstractItem;
+import com.grp12.softskilltools.Entities.User;
+import com.grp12.softskilltools.Fragment.StoreFragment;
 
 import java.util.ArrayList;
 
@@ -16,14 +19,17 @@ import java.util.ArrayList;
  * Created by mathiaslarsen on 22/11/2016.
  */
 
-public class StoreAdaptor extends BaseAdapter {
+public class StoreAdaptor extends BaseAdapter implements View.OnClickListener {
 
     private static ArrayList<AbstractItem> products;
     private LayoutInflater mInflater;
+    private AbstractItem item;
 
-    public StoreAdaptor(Context StoreFragment, ArrayList<AbstractItem> products){
+
+    public StoreAdaptor(Context mStoreFragment, ArrayList<AbstractItem> products){
         this.products = products;
-        mInflater = LayoutInflater.from(StoreFragment);
+        mInflater = LayoutInflater.from(mStoreFragment);
+
     }
 
 
@@ -54,6 +60,9 @@ public class StoreAdaptor extends BaseAdapter {
             holder.name = (TextView) convertView.findViewById(R.id.textView15);
             holder.description = (TextView) convertView.findViewById(R.id.textView16);
             holder.price = (TextView) convertView.findViewById(R.id.textView17);
+            holder.add = (ImageButton) convertView.findViewById(R.id.button25);
+            holder.add.setOnClickListener(this);
+
 
             convertView.setTag(holder);
         } else {
@@ -67,8 +76,18 @@ public class StoreAdaptor extends BaseAdapter {
         return convertView;
     }
 
+    @Override
+    public void onClick(View v) {
+        item = products.get(2);
+        User user = StoreFragment.getInstance().getUser();
+        StoreFragment.getInstance().addToBasket(item,1,user);
+
+    }
+
+
     static class ViewHolder{
         TextView name, description, price;
+        ImageButton add;
     }
 }
 
