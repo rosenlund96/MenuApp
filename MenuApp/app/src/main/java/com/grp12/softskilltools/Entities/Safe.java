@@ -1,5 +1,7 @@
 package com.grp12.softskilltools.Entities;
 
+
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,6 +35,7 @@ public class Safe {
 
         if (abstractItems.size()==value){
             return false;
+
         }
         return true;
     }

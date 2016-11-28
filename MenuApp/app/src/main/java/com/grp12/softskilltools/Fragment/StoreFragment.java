@@ -6,8 +6,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
-
+import android.widget.Toast;
 import com.galgespil.stvhendeop.menuapp.R;
 import com.grp12.softskilltools.Activities.MainMenu;
 import com.grp12.softskilltools.Entities.AbstractItem;
@@ -26,7 +27,7 @@ import java.util.Arrays;
  * Created by mathiaslarsen on 16/11/2016.
  */
 
-public class StoreFragment extends Fragment {
+public class StoreFragment extends Fragment{
 
     public StoreFragment(){
 
@@ -37,13 +38,14 @@ public class StoreFragment extends Fragment {
     private int qty;
     private final int Store_items = 3;
     View myView;
+    public ListView lv;
     private static StoreFragment sStoreFragment;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         myView = inflater.inflate(R.layout.frag_store, container, false);
         initialize();
         ArrayList<AbstractItem> products = getProducts();
-        ListView lv = (ListView) myView.findViewById(R.id.list);
+        lv = (ListView) myView.findViewById(R.id.list);
         lv.setAdapter(new StoreAdaptor(getContext(), products));
         sStoreFragment = this;
         return myView;
@@ -52,6 +54,7 @@ public class StoreFragment extends Fragment {
 
     public void addToBasket(AbstractItem item, int qty, User user){
         user.addToSafe(item, qty);
+        Toast.makeText(getContext(), "Du ejer nu "+item.getProductName(), Toast.LENGTH_SHORT).show();
     }
     public User getUser(){
         return MainMenu.getInstance().getUser();
@@ -86,4 +89,5 @@ public class StoreFragment extends Fragment {
         ArrayList<AbstractItem> products = new ArrayList<>(Arrays.asList(items));
         return products;
     }
+
 }

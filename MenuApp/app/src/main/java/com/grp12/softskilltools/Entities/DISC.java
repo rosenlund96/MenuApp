@@ -117,10 +117,15 @@ public class DISC extends AbstractItem {
     public void setQuestionAnswered(Question question){
         int questionNo = getQuestionNumber(question);
         questions[questionNo-1].setAnswered(true);
+        calculateCompletion(totalQuestions,questionNo);
     }
-    public int getCompletion(int totalQuestions, int currentQuestionNo ){
+    public int getCompletion(){
+
+        return Complete;
+    }
+    public void calculateCompletion(int totalQuestions, int currentQuestionNo ){
         int result = currentQuestionNo/totalQuestions*100;
-        return result;
+        this.Complete = result;
     }
     public int getQuestionNumber(Question question){
         int number  = 0;

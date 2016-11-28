@@ -64,7 +64,7 @@ public class StoreAdaptor extends BaseAdapter implements View.OnClickListener {
             holder.add.setOnClickListener(this);
 
 
-            convertView.setTag(holder);
+            convertView.setTag(convertView.getId(),position);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
@@ -78,10 +78,14 @@ public class StoreAdaptor extends BaseAdapter implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        item = products.get(2);
+        View parent = (View)v.getParent();
+        AbstractItem item = products.get(StoreFragment.getInstance().lv.getPositionForView(parent));
         User user = StoreFragment.getInstance().getUser();
         StoreFragment.getInstance().addToBasket(item,1,user);
 
+    }
+    public int getItemPosition(View view) {
+        return ((Integer) view.getTag(view.getId()));
     }
 
 
