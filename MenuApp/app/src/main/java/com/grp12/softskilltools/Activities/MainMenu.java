@@ -65,8 +65,11 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
         View hView =  navigationView.getHeaderView(0);
         TextView nav_user = (TextView)hView.findViewById(R.id.NavHeaderName);
         TextView nav_email = (TextView)hView.findViewById(R.id.NavHeaderEmail);
+        Intent PromptIntent = getIntent();
+        String email = PromptIntent.getStringExtra("UserEmail");
+        createUser(email);
         nav_user.setText("Testbruger");
-        nav_email.setText("Jegergay@gaymail.com");
+        nav_email.setText(user.getEmail());
 
 
         mToolbar = (Toolbar) findViewById(R.id.nav_action);
@@ -112,6 +115,10 @@ public class MainMenu extends AppCompatActivity implements NavigationView.OnNavi
     };
 
 }
+    public void createUser(String email){
+        this.user = new User("Test","Bruger",email,"Phone" );
+    }
+
     public static MainMenu getInstance() {
         return sMainMenu;
     }

@@ -39,6 +39,7 @@ public class LoginPromptActivity extends AppCompatActivity implements View.OnCli
     public void onClick(View v) {
         if (v == login) {
             Intent i = new Intent(LoginPromptActivity.this, MainMenu.class);
+            i.putExtra("UserEmail",email.getText().toString());
             startActivity(i);
         }
     }

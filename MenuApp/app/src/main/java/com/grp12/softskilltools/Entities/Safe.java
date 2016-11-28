@@ -1,5 +1,6 @@
 package com.grp12.softskilltools.Entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,6 +20,8 @@ public class Safe {
 
     public void Initialize(User user){
         this.owner = user;
+        abstractItems = new ArrayList<>();
+
     }
 
     public boolean addToSafe(AbstractItem item, int qty){
