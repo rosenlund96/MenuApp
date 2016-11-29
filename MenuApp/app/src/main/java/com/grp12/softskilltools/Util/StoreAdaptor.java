@@ -84,9 +84,6 @@ public class StoreAdaptor extends BaseAdapter implements View.OnClickListener {
         StoreFragment.getInstance().addToBasket(item,1,user);
 
     }
-    public int getItemPosition(View view) {
-        return ((Integer) view.getTag(view.getId()));
-    }
 
 
     static class ViewHolder{

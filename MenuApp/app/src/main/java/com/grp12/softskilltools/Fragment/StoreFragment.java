@@ -33,9 +33,7 @@ public class StoreFragment extends Fragment{
 
     }
 
-    private User user;
     private AbstractItem[] items;
-    private int qty;
     private final int Store_items = 3;
     View myView;
     public ListView lv;
