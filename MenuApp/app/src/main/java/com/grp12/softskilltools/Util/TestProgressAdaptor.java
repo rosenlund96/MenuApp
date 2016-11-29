@@ -12,6 +12,7 @@ import com.github.lzyzsd.circleprogress.DonutProgress;
 import com.grp12.softskilltools.Entities.AbstractItem;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by mathiaslarsen on 22/11/2016.
@@ -19,10 +20,10 @@ import java.util.ArrayList;
 
 public class TestProgressAdaptor extends BaseAdapter {
 
-    private static ArrayList<AbstractItem> products;
+    private static List<AbstractItem> products;
     private LayoutInflater mInflater;
 
-    public TestProgressAdaptor(Context ProgressFragment, ArrayList<AbstractItem> products){
+    public TestProgressAdaptor(Context ProgressFragment, List<AbstractItem> products){
         this.products = products;
         mInflater = LayoutInflater.from(ProgressFragment);
     }

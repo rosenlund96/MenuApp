@@ -39,6 +39,15 @@ public class Safe {
         }
         return true;
     }
+    public List<AbstractItem> getItems(){
+        return abstractItems;
+    }
+    public boolean isEmpty(){
+        if (abstractItems.isEmpty()){
+            return true;
+        }
+        return false;
+    }
 
     public boolean removeItemFromSafe(AbstractItem item){
         int value = abstractItems.size();

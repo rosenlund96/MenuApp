@@ -1,5 +1,7 @@
 package com.grp12.softskilltools.Entities;
 
+import java.util.List;
+
 /**
  * Created by mathiaslarsen on 18/11/2016.
  */
@@ -43,6 +45,7 @@ public class User {
     public String getPhone(){
         return this.phone;
     }
+    public List<AbstractItem> getSafe(){ return safe.getItems();}
     public void addToSafe(AbstractItem item, int qty){
         safe.addToSafe(item,qty);
     }
